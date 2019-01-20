@@ -56,6 +56,10 @@ format_output_name(core "SimCore")
 target_compile_definitions(core PRIVATE SIM_BUILD_CORE_LIB)
 target_include_directories(core PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+set_target_properties(core PROPERTIES
+  RUNTIME_OUTPUT_DIRECTORY ${SimTool2_BINARY_DIR}
+  )
+
 install(TARGETS core
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
