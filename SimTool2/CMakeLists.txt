@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 
 project(SimTool2)
 
+# Build Tests?
+option(ENABLE_TESTS "Enable tests" OFF)
+
 ### Modules ##################################################################
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
@@ -34,3 +37,7 @@ add_subdirectory(core)
 add_subdirectory(plot)
 add_subdirectory(gui)
 add_subdirectory(examples)
+
+if(ENABLE_TESTS)
+  add_subdirectory(tests)
+endif()
